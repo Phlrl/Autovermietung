@@ -3,6 +3,7 @@ namespace Autovermietung
     public class Auto
     {
         public string? Marke {get; private set;}
+        public double PreisProTag {get; private set;} = 0;
         public string? Modell {get; private set;}
         public string? Kennzeichen {get; private set;}
         public bool? IstVermietet {get; private set;}
