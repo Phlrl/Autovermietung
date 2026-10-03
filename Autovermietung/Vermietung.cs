@@ -6,11 +6,11 @@ namespace Autovermietung
         public Kunde? kunde {get; private set;}
         public int AnzahlTage {get; private set;} = 0;
 
-        public double BerechnePreis()
+        public double BerechnePreis() //einfachere implementierung
         {
             if (kunde.Rabatt != 0)
             {
-                double PreisMitRabatt = AnzahlTage * auto.PreisProTag * kunde.Rabatt;
+                double PreisMitRabatt = AnzahlTage * auto.PreisProTag * kunde.Rabatt; 
                 return PreisMitRabatt;
             }
             else
