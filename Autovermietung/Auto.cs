@@ -16,14 +16,29 @@ namespace Autovermietung
             IstVermietet = istvermietet;
         }
         
-        public void vermieten()
+        public void vermieten(bool mieten)
         {
-            
+            if(mieten = true)
+            {
+                IstVermietet = true;
+            }
+            else
+            {
+                Console.WriteLine("Auto ist nicht vermietet");
+            }
+
         }
 
-        public void zurueckgeben()
+        public void zurueckgeben(bool nichtmehrmieten)
         {
-            
+            if(nichtmehrmieten = true)
+            {
+                IstVermietet = false;
+            }
+            else
+            {
+                Console.WriteLine("Auto ist aktuell leider vermietet");
+            }
         }
     }
 }
