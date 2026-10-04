@@ -12,17 +12,12 @@ namespace Autovermietung
             KundenNummer = nummer;
         }
 
-        public void setRabatt(double rabbat)
+        public void setRabatt(double rabatt)
         {
-            if (Rabatt > 0 && Rabatt <= 1)
+            if (rabatt > 0 && rabatt <= 1)
             {
-                Rabatt = rabbat;
+                Rabatt = rabatt;
             }
-        }
-
-        public void autoMieten()
-        {
-            
         }
     }
 }

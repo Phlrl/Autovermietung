@@ -1,44 +1,51 @@
+using System.Runtime.InteropServices;
+
 namespace Autovermietung
 {
     public class Auto
     {
         public string? Marke {get; private set;}
-        public double PreisProTag {get; private set;} = 0;
+        public double PreisProTag {get; private set;}
         public string? Modell {get; private set;}
         public string? Kennzeichen {get; private set;}
         public bool? IstVermietet {get; private set;}
 
-        public Auto(string marke, string modell, string kennzeichen, bool istvermietet)
+        public Auto(string marke, string modell, string kennzeichen, bool istvermietet, double preisProTag = 0)
         {
             Marke = marke;
             Modell = modell;
             Kennzeichen = kennzeichen;
             IstVermietet = istvermietet;
+            PreisProTag = preisProTag;
         }
         
-        public void vermieten(bool mieten)
+        public bool mieten()
         {
-            if(mieten = true)
+            if (IstVermietet == true)
             {
-                IstVermietet = true;
-            }
-            else
-            {
-                Console.WriteLine("Auto ist nicht vermietet");
+                Console.WriteLine("Auto schon vermietet");
+                return false;
             }
 
+            IstVermietet = true;
+            return true;
         }
 
-        public void zurueckgeben(bool nichtmehrmieten)
+        /// <summary>
+        /// Call this method to give a car back.
+        /// this method checks if a car is rented out and if it is not rented out the method return false and a consolewriteline.
+        /// But if this case gets skipped it sets IstVermietet to false and returns true.
+        /// </summary>
+        /// <returns>returns true if not rented out else false</returns>
+        public bool zurueckgeben() 
         {
-            if(nichtmehrmieten = true)
+            if (IstVermietet == false)
             {
-                IstVermietet = false;
+                Console.WriteLine("Auto ist nicht vermietet");
+                return false;
             }
-            else
-            {
-                Console.WriteLine("Auto ist aktuell leider vermietet");
-            }
+            IstVermietet = false;
+            return true;
         }
     }
 }

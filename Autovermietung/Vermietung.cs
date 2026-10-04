@@ -2,9 +2,9 @@ namespace Autovermietung
 {
     public class Vermietung
     {
-        public Auto? auto{get; private set;}
-        public Kunde? kunde {get; private set;}
-        public int AnzahlTage {get; private set;} = 0;
+        public Auto? auto{get; set;}
+        public Kunde? kunde {get; set;}
+        public int AnzahlTage {get; set;} = 0;
 
         public double BerechnePreis() //einfachere implementierung
         {
